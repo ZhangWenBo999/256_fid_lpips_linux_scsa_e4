@@ -36,7 +36,7 @@ def main_worker(gpu, ngpus_per_node, opt):
     '''set networks and dataset'''
     phase_loader, val_loader = define_dataloader(phase_logger, opt) # val_loader is None if phase is test.
     networks = [define_network(phase_logger, opt, item_opt) for item_opt in opt['model']['which_networks']]
-    print(networks[0])
+    # print(networks[0])
 
     ''' set metrics, loss, optimizer and  schedulers '''
     metrics = [define_metric(phase_logger, item_opt) for item_opt in opt['model']['which_metrics']]
